@@ -1,0 +1,36 @@
+.container
+  .col-lg-12
+    .well.bs-component
+      = form_for Rc5.new ,class: 'form-horizontal' do |f|
+        %fieldset
+          %legend Encryption/Decryption
+          .form-group
+            = f.label "Key", class: 'col-lg-2 control-label'
+            .col-lg-10
+              = f.text_field :key, required: false, autofocus: true, class: 'form-control', placeholder: 'Encryptyion key'
+            %br
+          %br
+          .form-group
+            = f.label "File", class: 'col-lg-2 control-label'
+            .col-lg-10
+              = f.file_field :file
+            %br
+          %br
+          .form-group
+            .col-lg-10.col-lg-offset-2
+              =f.submit "Encrypt", class: "btn btn-success"
+              =f.submit "Decrypt", class: "btn btn-warning"
+    %center
+      .spinner-loader
+        Loading…
+
+:javascript
+  $(function() {
+    $('.spinner-loader').hide();
+    $(document).on('click', '.btn', function(event){
+        $('.spinner-loader').show('slow');
+    });
+  });
+
+
+
