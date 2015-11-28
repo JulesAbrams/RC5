@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  root 'rc5s#new'
+  root 'rsas#new'
 
-  resources :rc5s
+  resources :rsas
 
 end

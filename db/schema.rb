@@ -13,9 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20151123225913) do
 
-  create_table "rc5s", force: :cascade do |t|
-    t.string   "key"
-    t.text     "text"
+  create_table "rsas", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "file"
